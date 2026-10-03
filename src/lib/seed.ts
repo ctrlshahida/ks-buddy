@@ -1,0 +1,16 @@
+import type { Activity } from './types'
+
+type Seed = Omit<Activity, 'id' | 'demo'>
+
+const seed: Seed[] = [
+  { date: '2026-09-30', title: 'Investigated reporting discrepancies', work: 'Updated the weekly Power BI sales report and traced differences against the finance report with my manager.', learn: 'Learned how reporting definitions and cut-off dates affect data consistency across teams.', codes: ['K1', 'K2', 'S3', 'B2'], hours: 2.5, otj: true, project: 'Reporting', files: ['Weekly sales report.pbix', 'Reconciliation notes.pdf'] },
+  { date: '2026-09-28', title: 'Cleaned the customer dataset', work: 'Removed duplicate records, standardised dates and documented quality checks for the customer dataset.', learn: 'Developed a repeatable validation approach and understood the impact of missing records.', codes: ['K2', 'S1', 'B2'], hours: 2, otj: true, project: 'Data quality', files: ['Validation checklist.xlsx'] },
+  { date: '2026-09-25', title: 'Reviewed the reporting process', work: 'Shadowed the operations team to understand how customer orders become weekly management reports.', learn: 'Connected operational processes to the business decisions supported by our reports.', codes: ['K1', 'B1'], hours: 1.5, otj: true, project: 'Business processes', files: ['Process map.pdf'] },
+  { date: '2026-09-23', title: 'Completed data privacy training', work: 'Completed a data protection workshop and reviewed our team’s approach to storing customer information.', learn: 'Learned to minimise personal data and apply access controls when preparing shared datasets.', codes: ['K3', 'B2'], hours: 2, otj: true, project: 'Training', files: ['Privacy workshop certificate.pdf'] },
+  { date: '2026-09-21', title: 'Explored sales trends', work: 'Compared regional sales trends in Power BI and investigated two unusual changes in the weekly figures.', learn: 'Practised checking assumptions before interpreting changes in business performance.', codes: ['S3', 'K2'], hours: 3, otj: true, project: 'Reporting', files: ['Trend analysis.png'] },
+  { date: '2026-09-18', title: 'Shared an analysis update', work: 'Gave a short update in our team meeting about the customer data cleanup project.', learn: 'Practised explaining technical findings in clear language and responding to questions.', codes: ['S6', 'B1'], hours: 1, otj: true, project: 'Communication', files: ['Team meeting notes.docx'] },
+  { date: '2026-09-16', title: 'Built a reusable data import', work: 'Created and documented a Power Query import for monthly CRM exports with support from a colleague.', learn: 'Learned to combine data sources consistently and document an approach others can follow.', codes: ['S1', 'B1', 'B2'], hours: 2.5, otj: true, project: 'Data preparation', files: ['Import guide.pdf', 'Customer import.xlsx'] },
+  { date: '2026-09-14', title: 'Mapped customer order data', work: 'Reviewed the order lifecycle and identified data fields needed for the monthly operations dashboard.', learn: 'Understood how business requirements shape the data collected and the reporting process.', codes: ['K1', 'S1'], hours: 2, otj: true, project: 'Business processes', files: ['Requirements notes.docx'] },
+]
+
+export const SEED_LOGS: Activity[] = seed.map((l, i) => ({ ...l, id: `demo-${i}`, demo: true }))
